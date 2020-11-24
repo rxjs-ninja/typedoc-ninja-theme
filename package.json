@@ -1,7 +1,7 @@
 {
-  "name": "typedoc-loopingz-theme",
+  "name": "typedoc-ninja-theme",
   "description": "Improved theme for Typedoc",
-  "version": "1.1.0",
+  "version": "1.0.0-rc.1",
   "main": "index.js",
   "scripts": {
     "clean:build": "./node_modules/.bin/rimraf bin",
@@ -58,10 +58,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/loopingz/typedoc-theme.git"
+    "url": "git+https://github.com/ninja/typedoc-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/loopingz/typedoc-theme/issues"
+    "url": "https://github.com/ninja/typedoc-theme/issues"
   },
-  "homepage": "https://github.com/loopingz/typedoc-theme#readme"
+  "homepage": "https://github.com/ninja/typedoc-theme#readme"
 }

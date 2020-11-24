@@ -24,6 +24,6 @@ import {
  * Based on
  * https://github.com/christopherthielen/typedoc-plugin-external-module-name
  */
-@Component({ name: 'neo-theme' })
+@Component({ name: 'ninja-theme' })
 export class ExternalModuleMapPlugin extends ConverterComponent {
 }
