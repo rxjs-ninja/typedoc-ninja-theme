@@ -1,24 +1,24 @@
 {{~#with comment~}}
     {{~#if shortText~}}
-        <div class="tsd-comment tsd-typography tsd-comment-shorttext">
-            <div class="lead">
+        <span class="tsd-comment tsd-typography tsd-comment-shorttext">
+            <span class="lead">
                 {{#markdown}}{{{shortText}}}{{/markdown}}
-            </div>
-        </div>
+            </span>
+        </span>
     {{~/if~}}
     {{~#if text~}}
-        <div class="tsd-comment tsd-typography tsd-comment-text">
+        <span class="tsd-comment tsd-typography tsd-comment-text">
             {{#markdown}}{{{text}}}{{/markdown}}
-        </div>
+        </span>
     {{~/if~}}
     {{~#if tags~}}
-        <div class="tsd-comment tsd-typography tsd-comment-tags">
+        <span class="tsd-comment tsd-typography tsd-comment-tags">
             <dl class="tsd-comment-tags">
                 {{~#each tags~}}
                     <dt class="tds-tag-{{tagName}}">{{tagName}}</dt>
                     <dd class="tds-tag-{{tagName}}">{{#markdown}}{{{text}}}{{/markdown}}</dd>
                 {{~/each~}}
             </dl>
-        </div>
+        </span>
     {{~/if~}}
 {{~/with~}}
