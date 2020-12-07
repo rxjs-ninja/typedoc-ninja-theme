@@ -10,44 +10,65 @@
 // </dl>
 //
 dl.tsd-comment-tags
-    overflow: hidden
+  overflow: hidden
 
-    dt
-        text-transform: capitalize
-        padding: 1px 5px
-        margin: 0
-        border-bottom: 1px solid $COLOR_COMMENT_TAG
-        color: #000
-        font-size: 0.8em
-        font-weight: bold
-        background-color: #e4e4e4
+  dt
+    text-transform: capitalize
+    padding: 1px 5px
+    margin: 0
+    border-bottom: 1px solid $COLOR_COMMENT_TAG
+    color: #000
+    font-size: 0.8em
+    font-weight: bold
+    background-color: #e4e4e4
 
-        &.tds-tag-internal
-            float: left
-            background-color: #dad0ff
-            border-radius: 4px
+    &.tds-tag-internal
+      float: left
+      background-color: #dad0ff
+      border-radius: 4px
 
-        &.tds-tag-remarks
-            float: left
-            background-color: #99e6ff
-            border-radius: 4px
-            margin: 5px 10px
+    &.tds-tag-see
+      float: left
+      background-color: #808080
+      border-radius: 4px
 
-    dd
-        margin: 0 0 10px 0
+    &.tds-tag-remarks
+      float: left
+      background-color: #99e6ff
+      border-radius: 4px
+      margin: 5px 10px
 
-        &:before, &:after
-            display: table
-            content: " "
-        pre, &:after
-            clear: both
+  dd
+    margin: 0 0 10px 0
 
-        &.tds-tag-remarks
-            border: 1px solid grey
-            border-radius: 4px
+    &:before, &:after
+      display: table
+      content: " "
+
+    pre, &:after
+      clear: both
+
+    &.tds-tag-remarks
+      border: 1px solid grey
+      border-radius: 4px
+
+  p
+    margin: 0
+
+
+dd
+  &.tds-tag-example
 
     p
-        margin: 0
+      padding: 0 0 0 20px
+      font-family: monospace
+      font-size: 0.9em
+
+    p:first-child
+      border-bottom: 1px solid #808080
+
+    p:last-child
+      border-top: 1px solid #808080
 
 
 // Special formatting for the main reflection on each page.
@@ -60,9 +81,9 @@ dl.tsd-comment-tags
 // </section>
 //
 .tsd-panel.tsd-comment .lead
-    font-size: 1.1em
-    line-height: $LINE_HEIGHT
-    margin-bottom: 2em
+  font-size: 1.1em
+  line-height: $LINE_HEIGHT
+  margin-bottom: 2em
 
-    &:last-child
-        margin-bottom: 0
+  &:last-child
+    margin-bottom: 0
