@@ -14,29 +14,34 @@ dl.tsd-comment-tags
 
   dt
     text-transform: capitalize
-    padding: 1px 5px
-    margin: 0
-    border-bottom: 1px solid $COLOR_COMMENT_TAG
+    padding: 0 5px
+    margin: 0 10px 0 0
     color: #000
     font-size: 0.8em
     font-weight: bold
     background-color: #e4e4e4
+    float: left
+    min-width: 30px
+    text-align: center
+
+    &.tds-tag-example
+      position: relative
+      top: 1px
+      left: 1px
+      border-radius: 4px 0 0 0
 
     &.tds-tag-internal
-      float: left
       background-color: #dad0ff
       border-radius: 4px
 
     &.tds-tag-see
-      float: left
-      background-color: #808080
+      background-color: #7ce296
       border-radius: 4px
 
-    &.tds-tag-remarks
-      float: left
+    &.tds-tag-remarks,
+    &.tds-tag-remark
       background-color: #99e6ff
       border-radius: 4px
-      margin: 5px 10px
 
   dd
     margin: 0 0 10px 0
@@ -48,27 +53,42 @@ dl.tsd-comment-tags
     pre, &:after
       clear: both
 
-    &.tds-tag-remarks
-      border: 1px solid grey
-      border-radius: 4px
-
   p
     margin: 0
 
 
 dd
+
+  &.tds-tag-remarks,
+  &.tds-tag-remark
+    font-style: italic
+
   &.tds-tag-example
+    border: 1px solid grey
+    border-radius: 4px
+    margin-bottom: 20px !important
+
+    &:first-child
+      margin-top: 20px !important
+
+    &:last-child
+      margin-bottom: 10px !important
 
     p
-      padding: 0 0 0 20px
       font-family: monospace
       font-size: 0.9em
 
     p:first-child
+      padding: 0 0 0 20px
       border-bottom: 1px solid #808080
 
     p:last-child
+      padding: 0 0 0 10px
       border-top: 1px solid #808080
+
+// Hide Ignore Tags from top of file
+.tsd-panel > .tsd-comment.tsd-comment-tags
+  display: none
 
 
 // Special formatting for the main reflection on each page.

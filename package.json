@@ -1,7 +1,7 @@
 {
   "name": "typedoc-ninja-theme",
   "description": "Typedoc theme for RxJS Ninja",
-  "version": "1.0.0-rc.9",
+  "version": "1.0.0-rc.11",
   "main": "index.js",
   "scripts": {
     "clean:build": "./node_modules/.bin/rimraf bin",
@@ -20,7 +20,7 @@
     "test:rebuild": "yarn clean:node_modules && yarn && yarn build"
   },
   "author": {
-    "name": "Remi Cattiau based on Nick Felker, based on work by Sebastian Lenz"
+    "name": "Tane Piper based on Remi Cattiau based on Nick Felker, based on work by Sebastian Lenz"
   },
   "license": "Apache-2.0",
   "engines": {
