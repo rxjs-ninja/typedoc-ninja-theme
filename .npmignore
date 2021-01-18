@@ -8,3 +8,4 @@ cloudbuild.yaml
 tslint.json
 *.tgz
 .idea/
+*.tmp.txt

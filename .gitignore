@@ -13,3 +13,4 @@ git-presubmit-linter/
 *.tgz
 test/docs
 /.idea/
+*.tmp.txt
