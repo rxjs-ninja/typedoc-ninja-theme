@@ -1,5 +1,8 @@
 {{#if groups}}
     <section class="tsd-panel-group tsd-index-group">
+        {{#with @root.model}}
+            <h2>{{kindString}} - {{name}}</h2>
+        {{/with}}
         <section class="tsd-panel tsd-index-panel">
             <div class="tsd-index-content">
                 {{#each groups}}

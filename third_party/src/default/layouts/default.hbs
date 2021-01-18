@@ -13,75 +13,54 @@
 </head>
 
 <body>
-    <div class="main">
-        {{> header}}
-        <div class="container container-main">
-            <div class="row">
-                <div class="col-menu menu-sticky-wrap menu-highlight">
-                    {{#if mdPagesNavigation.children}}
+<div class="main">
+    {{> header}}
+    <div class="container container-main">
+        <div class="row">
+            <div class="col-menu menu-sticky-wrap menu-highlight">
+                {{#if mdPagesNavigation.children}}
                     <nav class="tsd-navigation outline primary">
                         <ul>
                             {{#each mdPagesNavigation.children}}
-                            {{> navigation}}
+                                {{> navigation}}
                             {{/each}}
                         </ul>
                     </nav>
-                    {{/if}}
-                    {{#if settings.outline}}
+                {{/if}}
+                {{#if settings.outline}}
                     <nav class="tsd-navigation outline primary">
                         <ul style="display:none">
                             {{json settings.outline.[0]}}
                         </ul>
                     </nav>
-                    {{/if}}
-                    <nav class="tsd-navigation root">
-                        <ul>
-                            {{! Globals }}
-                            {{#each navigation.children}}
+                {{/if}}
+                <nav class="tsd-navigation root">
+                    <ul>
+                        {{! Globals }}
+                        {{#each navigation.children}}
                             {{> toc.root}}
-                            {{/each}}
-                        </ul>
-                    </nav>
-                    <nav class="tsd-navigation">
-
-                        {{#if model.typeHierarchy}}
-                        <div>
-                            {{#with model.typeHierarchy}}{{> hierarchy}}{{/with}}
-                        </div>
-                        {{/if}}
-                        <ul class="before-current">
-                            {{#each toc.children}}
-                            {{> toc.root}}
-                            {{/each}}
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-content">
-                    <h1>{{#compact}}
-                        {{model.kindString}}&nbsp;
-                        {{removeQuotes model.name}}
-                        {{#if model.typeParameters}}
-                        &lt;
-                        {{#each model.typeParameters}}
-                        {{#if @index}},&nbsp;{{/if}}
-                        {{name}}
                         {{/each}}
-                        &gt;
-                        {{/if}}
-                        {{/compact}}</h1>
-
-                    {{{contents}}}
-                    <!--{{json settings}}-->
-
-                    {{> footer}}
-                </div>
+                    </ul>
+                </nav>
+                <nav class="tsd-navigation">
+                    <ul class="before-current">
+                        {{#each toc.children}}
+                            {{> toc.root}}
+                        {{/each}}
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-content">
+                {{{contents}}}
+                {{> footer}}
             </div>
         </div>
     </div>
-    <div class="overlay"></div>
-    <script src="{{relativeURL "assets/js/main.js"}}"></script>
+</div>
+<div class="overlay"></div>
+<script src="{{relativeURL "assets/js/main.js"}}"></script>
 
-    {{> analytics}}
+{{> analytics}}
 
 </body>
 
