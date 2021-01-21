@@ -1,0 +1,23 @@
+<div class="tsd-signature tsd-kind-icon">{{#compact}}
+    {{{wbr name}}}
+    {{#if typeParameters}}
+        &lt;
+        {{#each typeParameters}}
+            {{#if @index}},&nbsp;{{/if}}
+            {{name}}
+        {{/each}}
+        &gt;
+    {{/if}}
+    <span class="tsd-signature-symbol">{{#if isOptional}}?{{/if}}:</span>
+    {{#with tryGetTargetReflectionDeep}}
+        {{#ifCond ../name '===' name}}
+            re-exports <a href="{{relativeURL url}}">{{name}}</a>
+        {{else if flags.isExported}}
+            alias of <a href="{{relativeURL url}}">{{name}}</a>
+        {{else}}
+            alias of <a href="{{relativeURL url}}">{{name}}</a>
+        {{/ifCond}}
+    {{else}}
+        re-exports {{name}}
+    {{/with}}
+{{/compact}}</div>

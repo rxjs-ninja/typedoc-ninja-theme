@@ -17,6 +17,10 @@ let { ParameterType, ReflectionKind } = require('typedoc/dist/lib/utils/options/
 let plugin = require('./bin/default/plugin')
 module.exports = (PluginHost) => {
   const app = PluginHost.owner
+  /**
+   * Expected string: Text to display on homepage instead of breadcrumb
+   */
+  app.options.addDeclaration({ name: 'homepageText', type: ParameterType.String })
   /*
    * Expected array:
    *  interface Link {
@@ -51,7 +55,7 @@ module.exports = (PluginHost) => {
   app.options.addDeclaration({ name: 'source', type: ParameterType.Mixed })
   app.options.addDeclaration({ name: 'excludeReferences', type: ParameterType.Boolean })
 
-  app.converter.addComponent('loopingz-theme', plugin.ExternalModuleMapPlugin)
+  app.converter.addComponent('rxjs-ninja-theme', plugin.ExternalModuleMapPlugin)
 
   // Remove Reference
   app.converter.on("resolveBegin", (context) => 

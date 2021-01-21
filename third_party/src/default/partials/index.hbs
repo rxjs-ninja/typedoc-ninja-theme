@@ -1,14 +1,46 @@
-{{#if groups}}
+{{#if categories}}
     <section class="tsd-panel-group tsd-index-group">
-        {{#with @root.model}}
-            <h2>{{kindString}} - {{name}}</h2>
-        {{/with}}
+        <h2>Index</h2>
         <section class="tsd-panel tsd-index-panel">
             <div class="tsd-index-content">
-                {{#each groups}}
-                    <section class="tsd-index-section {{cssClasses}}">
-                        {{#if categories}}
-                            {{#each categories}}
+                {{#each categories}}
+                    <section class="tsd-index-section">
+                        <h3>{{title}}</h3>
+                        <ul class="tsd-index-list">
+                            {{#each children}}
+                                <li class="{{cssClasses}}"><a href="{{relativeURL url}}" class="tsd-kind-icon">{{#if
+                                        name}}{{{wbr name}}}{{else}}<em>{{{wbr kindString}}}</em>{{/if}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </section>
+                {{/each}}
+            </div>
+        </section>
+    </section>
+{{else}}
+    {{#if groups}}
+        <section class="tsd-panel-group tsd-index-group">
+            {{#with @root.model}}
+                <h2>{{kindString}} - {{name}}</h2>
+            {{/with}}
+            <section class="tsd-panel tsd-index-panel">
+                <div class="tsd-index-content">
+                    {{#each groups}}
+                        <section class="tsd-index-section {{cssClasses}}">
+                            {{#if categories}}
+                                {{#each categories}}
+                                    <h3>{{title}}</h3>
+                                    <div class="tsd-index-list">
+                                        {{#each children}}
+                                            <div class="{{cssClasses}}"><a href="{{relativeURL url}}"
+                                                                           class="tsd-kind-icon">{{#if
+                                                    name}}{{{removeQuotes
+                                                    name}}}{{else}}<em>{{{wbr kindString}}}</em>{{/if}}</a>
+                                            </div>
+                                        {{/each}}
+                                    </div>
+                                {{/each}}
+                            {{else}}
                                 <h3>{{title}}</h3>
                                 <div class="tsd-index-list">
                                     {{#each children}}
@@ -18,21 +50,11 @@
                                         </div>
                                     {{/each}}
                                 </div>
-                            {{/each}}
-                        {{else}}
-                            <h3>{{title}}</h3>
-                            <div class="tsd-index-list">
-                                {{#each children}}
-                                    <div class="{{cssClasses}}"><a href="{{relativeURL url}}"
-                                                                   class="tsd-kind-icon">{{#if name}}{{{removeQuotes
-                                            name}}}{{else}}<em>{{{wbr kindString}}}</em>{{/if}}</a>
-                                    </div>
-                                {{/each}}
-                            </div>
-                        {{/if}}
-                    </section>
-                {{/each}}
-            </div>
+                            {{/if}}
+                        </section>
+                    {{/each}}
+                </div>
+            </section>
         </section>
-    </section>
+    {{/if}}
 {{/if}}

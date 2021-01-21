@@ -1,3 +1,4 @@
+
 <ul class="tsd-type-parameters">
     {{#each typeParameters}}
         <li>
@@ -6,6 +7,9 @@
                 {{#if type}}
                     <span class="tsd-signature-symbol">:&nbsp;</span>
                     {{#with type}}{{> type}}{{/with}}
+                {{/if}}
+                {{#if default}}
+                    &nbsp;=&nbsp;{{#with default}}{{> type}}{{/with}}
                 {{/if}}
             {{/compact}}</h4>
             {{> comment}}

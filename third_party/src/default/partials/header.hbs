@@ -3,10 +3,10 @@
         <div class="container">
             <div class="table-wrap">
                 <div class="table-cell" id="tsd-search" data-index="{{relativeURL "assets/js/search.json"}}"
-                    data-base="{{relativeURL "./"}}">
+                     data-base="{{relativeURL "./"}}">
                     <div class="field">
                         <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-                        <input id="tsd-search-field" type="text" />
+                        <input id="tsd-search-field" type="text"/>
                     </div>
 
                     <ul class="results">
@@ -15,14 +15,14 @@
                     </ul>
                     <ul class="results-priority" style="display:none">
                         {{#each settings.search}}
-                        <li data-name="{{name}}" data-subtitle="{{subtitle}}"></li>
+                            <li data-name="{{name}}" data-subtitle="{{subtitle}}"></li>
                         {{/each}}
                     </ul>
 
                     <a href="{{relativeURL "index.html"}}" class="title header-title">{{project.name}}</a>
                     <div class="header-nav">
                         {{#each settings.links}}
-                        &emsp;  <a href="{{url}}" class="title">{{label}}</a>
+                            &emsp; <a href="{{url}}" class="title">{{label}}</a>
                         {{/each}}
                     </div>
                 </div>
@@ -40,17 +40,17 @@
                                 </ul>
                             </div>
 
-                            <input type="checkbox" id="tsd-filter-inherited" checked />
+                            <input type="checkbox" id="tsd-filter-inherited" checked/>
                             <label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 
                             {{#unless settings.excludeExternals}}
-                            <input type="checkbox" id="tsd-filter-externals" checked />
-                            <label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+                                <input type="checkbox" id="tsd-filter-externals" checked/>
+                                <label class="tsd-widget" for="tsd-filter-externals">Externals</label>
                             {{/unless}}
 
                             {{#unless settings.excludeNotExported}}
-                            <input type="checkbox" id="tsd-filter-only-exported" />
-                            <label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+                                <input type="checkbox" id="tsd-filter-only-exported"/>
+                                <label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
                             {{/unless}}
                         </div>
                     </div>
@@ -62,9 +62,15 @@
     </div>
     <div class="tsd-page-title">
         <div class="container">
-            <ul class="tsd-breadcrumb">
-                {{#with model}}{{> breadcrumb}}{{/with}}
-            </ul>
+            {{#if model.parent}} {{! Don't show breadcrumbs on main project page, it is the root page. !}}
+                <ul class="tsd-breadcrumb">
+                    {{#with model}}{{> breadcrumb}}{{/with}}
+                </ul>
+            {{else}}
+                {{#if settings.homepageText}}
+                    <span>{{settings.homepageText}}</span>
+                {{/if}}
+            {{/if}}
         </div>
     </div>
 </header>
