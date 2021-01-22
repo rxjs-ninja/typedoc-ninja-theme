@@ -2,11 +2,15 @@
     <div class="tsd-page-toolbar">
         <div class="container">
             <div class="table-wrap">
+                <div class="table-cell" id="tsd-header">
+                    <a href="{{relativeURL "index.html"}}" class="title header-title">{{project.name}}</a>
+                </div>
+
                 <div class="table-cell" id="tsd-search" data-index="{{relativeURL "assets/js/search.json"}}"
                      data-base="{{relativeURL "./"}}">
                     <div class="field">
                         <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-                        <input id="tsd-search-field" type="text"/>
+                        <input id="tsd-search-field" type="text" placeholder="Search the RxJS Ninja APIs"/>
                     </div>
 
                     <ul class="results">
@@ -18,8 +22,9 @@
                             <li data-name="{{name}}" data-subtitle="{{subtitle}}"></li>
                         {{/each}}
                     </ul>
+                </div>
 
-                    <a href="{{relativeURL "index.html"}}" class="title header-title">{{project.name}}</a>
+                <div class="table-cell" id="tsd-nav">
                     <div class="header-nav">
                         {{#each settings.links}}
                             &emsp; <a href="{{url}}" class="title">{{label}}</a>
