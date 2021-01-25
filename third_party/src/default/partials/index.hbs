@@ -5,7 +5,7 @@
             <div class="tsd-index-content">
                 {{#each categories}}
                     <section class="tsd-index-section">
-                        <h3>{{title}}</h3>
+                        <h3><a href="#{{title}}">{{title}}</h3></h3>
                         <ul class="tsd-index-list">
                             {{#each children}}
                                 <li class="{{cssClasses}}"><a href="{{relativeURL url}}" class="tsd-kind-icon">{{#if
@@ -21,7 +21,7 @@
     {{#if groups}}
         <section class="tsd-panel-group tsd-index-group">
             {{#with @root.model}}
-                <h2>{{kindString}} - {{name}}</h2>
+                <h2>{{name}} {{kindString}}</h2>
             {{/with}}
             <section class="tsd-panel tsd-index-panel">
                 <div class="tsd-index-content">
@@ -29,7 +29,7 @@
                         <section class="tsd-index-section {{cssClasses}}">
                             {{#if categories}}
                                 {{#each categories}}
-                                    <h3>{{title}}</h3>
+                                    <h3><a href="#{{title}}">{{title}}</a></h3>
                                     <div class="tsd-index-list">
                                         {{#each children}}
                                             <div class="{{cssClasses}}"><a href="{{relativeURL url}}"
