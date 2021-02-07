@@ -13,10 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-let { ParameterType, ReflectionKind } = require('typedoc/dist/lib/utils/options/declaration');
-let plugin = require('./bin/default/plugin')
+const { ParameterType } = require('typedoc/dist/lib/utils/options/declaration');
+const plugin = require('./bin/default/plugin')
 module.exports = (PluginHost) => {
   const app = PluginHost.owner
+
+  /**
+   * Expected string: Support for Fathom analytics
+   */
+  app.options.addDeclaration({ name: 'fathomId', type: ParameterType.String })
   /**
    * Expected string: Text to display on homepage instead of breadcrumb
    */

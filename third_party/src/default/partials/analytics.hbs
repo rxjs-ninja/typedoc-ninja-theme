@@ -9,3 +9,9 @@
         ga('send', 'pageview');
     </script>
 {{/if}}
+
+{{#if settings.fathomId}}
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="{{settings.fathomId}}" defer></script>
+    <!-- / Fathom -->
+{{/if}}
